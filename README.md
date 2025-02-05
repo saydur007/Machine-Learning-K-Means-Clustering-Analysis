@@ -1,48 +1,47 @@
-Machine Learning Dataset Analysis 
-The dataset that I chose is a customer marketing campaign which contains information about 
-customers ranging from their date of birth, income and shows their spending habits. It helps 
-businesses better understand their customers and makes it easier for them to modify products 
-according to specific needs and behaviours. Our main goal is to cluster the data with respect to 
-their income and expenditure (1). 
-So for this dataset at first we calculated the total expenditure of them in various products and 
-created a new column based on that. We also removed some outliers from the data such as 
-income over 600000. Then we scaled the data to normalize which is both the income and spent 
-column. The clustering methodology that we decided to use is Kmeans clustering which is an 
-unsupervised learning algorithm. So before clustering the data we created an elbow plot to find 
-out the optimum number of clusters required to classify the data.  
+Overview
+This project focuses on clustering customer data from a marketing campaign using unsupervised machine learning techniques. The dataset contains information such as customer income, age, and spending habits. The goal is to group customers into clusters based on their income and expenditure, allowing businesses to better understand their customers and tailor their marketing strategies accordingly.
 
-From the above plot it is clear that the optimal number of clusters is 4. So now we utilize the 
-clustering algorithm and create a scatter plot with income in X axis and Spent in Y axis and we 
-get this: 
-Results: 
-The data is divided into four clusters based on Income and Spent: 
-● Cluster 0 (green): Represents customers with lower income and lower spending. 
-● Cluster 1 (orange): Represents customers with higher income and higher spending. 
-● Cluster 2 (blue): Represents customers with moderate income and moderate spending. 
-● Cluster 3 (purple/pink): Represents customers with moderate-to-high income and 
-spending. 
-So from here we can see that there is a moderate correlation between income and spending. 
-Generally as customers' income increases their total spending also increases. 
-Each cluster here roughly follows a diagonal pattern which also indicates high earners tend to 
-spend more. 
-The plot also has some outlier in Cluster 0 (green) where a customer with very low income  has 
-high expenditure. This could indicate external financial support. 
-Based on these clusters, the business can tailor its marketing and sales strategies: 
-● Cluster 1 (orange): High-income, high-spending customers could be targeted with 
-premium products and personalized offers. 
-● Cluster 0 (green): Low-income, low-spending customers may prefer budget-friendly 
-options and discount promotions. 
-● Cluster 2 and Cluster 3 (blue and pink): These middle segments could be offered 
-mid-tier products and bundled deals to encourage increased spending. 
-Moreover, Cluster 3 (pink) might represent customers who are on the verge of transitioning into 
-higher spending. So they could be moved to that category by providing loyalty programs and 
-promotions. 
-So to conclude it could be said that the clustering provides few insights on how to take actions 
-based on the customer category. We can see the positive trend between income and spending is 
-visible from the scatter plot, confirming that higher-income customers tend to spend more. The 
-presence of few outliers highlights potential areas for further business exploration or specialized 
-marketing. The separation of customers into these groups provides a framework for creating 
-differentiated marketing strategies aimed at maximizing engagement and revenue for each 
-segment. 
-References: 
-https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis 
+Dataset
+The dataset used in this project is publicly available on Kaggle: Customer Personality Analysis Dataset
+
+Features
+Date of Birth: The birth date of the customer.
+Income: The annual income of the customer.
+Expenditure: Total spending on various products (calculated during analysis).
+Objective
+The main goal of this analysis is to cluster the data based on income and expenditure, which helps in identifying customer segments. This will assist businesses in creating personalized marketing campaigns.
+
+Data Preprocessing
+Expenditure Calculation: A new column was created that sums up the total expenditure on various products for each customer.
+Outlier Removal: Extreme income values, such as incomes over 600,000, were considered outliers and removed to avoid skewing the results.
+Data Scaling: The Income and Spent columns were scaled to normalize the data, making the clustering algorithm more effective.
+Clustering Methodology
+We applied the KMeans Clustering algorithm, which is an unsupervised machine learning method. Before applying the algorithm, an Elbow Plot was used to determine the optimal number of clusters.
+
+Elbow Plot
+From the elbow plot, the optimal number of clusters was determined to be 4.
+
+Results
+Clusters
+After applying KMeans clustering, the data was divided into four distinct clusters:
+
+Cluster 0 (Green): Low-income, low-spending customers.
+Cluster 1 (Orange): High-income, high-spending customers.
+Cluster 2 (Blue): Moderate-income, moderate-spending customers.
+Cluster 3 (Purple/Pink): Moderate-to-high income and spending customers.
+Scatter Plot
+A scatter plot was created with Income on the X-axis and Spent on the Y-axis. The clusters show a clear diagonal trend, indicating that income and spending are positively correlated—as income increases, spending tends to increase.
+
+Key Insights
+Cluster 0 (Green): Low-income, low-spending customers. A few outliers in this cluster indicate customers with low income but high expenditure, possibly due to external financial support.
+Cluster 1 (Orange): High-income, high-spending customers. They can be targeted with premium products and personalized offers.
+Cluster 2 (Blue): Moderate-income, moderate-spending customers. These customers may respond well to mid-tier products or bundled deals.
+Cluster 3 (Purple/Pink): Moderate-to-high income and spending customers. These customers may be transitioning into higher spending and could be encouraged through loyalty programs and promotions.
+Business Implications
+By analyzing the clusters, businesses can adjust their marketing and sales strategies:
+
+Cluster 1 (High-income, high-spending): Focus on premium products and personalized offers.
+Cluster 0 (Low-income, low-spending): Focus on budget-friendly options and discounts.
+Clusters 2 & 3 (Middle segments): Promote mid-tier products and offer bundled deals or loyalty programs to encourage spending.
+Conclusion
+The KMeans clustering analysis of the customer data provided several actionable insights into customer segmentation. The relationship between income and spending is evident, with higher-income customers tending to spend more. These insights enable businesses to craft differentiated marketing strategies for each customer segment, ultimately helping to maximize engagement and revenue.
